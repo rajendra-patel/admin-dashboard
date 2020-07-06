@@ -1,0 +1,147 @@
+<div class="modal-header">
+    <h4 class="modal-title">Add Coupon</h4>
+    <button type="button" class="close" aria-label="Close"
+     (click)="activeModal.dismiss('Cross click')">
+     <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <form [formGroup]="myForm" (ngSubmit)="submitForm()">
+    <div class="modal-boy">
+      <div class="container">
+        <div class="row col">
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="name">Coupon Name(Customers will not see)</label>
+                        <input type="text" class="form-control" id="name" formControlName="name" aria-describedby="couponName" placeholder="name-year-num"> </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="coupondescription1">Coupon Description</label>
+                        <textarea id="coupondescription1" class="form-control" aria-label="With textarea"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="redemptionoption">Allow Only 1 Redemption Per Person?</label>
+                        <div class="row">
+                            <div class="dropdown col-5">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                      </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <button class="dropdown-item" type="button">Action</button>
+                                    <button class="dropdown-item" type="button">Another action</button>
+                                    <button class="dropdown-item" type="button">Something else here</button>
+                                </div>
+                            </div>
+                            <div class="dropdown col-7">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                      </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <button class="dropdown-item" type="button">Action</button>
+                                    <button class="dropdown-item" type="button">Another action</button>
+                                    <button class="dropdown-item" type="button">Something else here</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="redemptionoption">Apply an Expiration Date?</label>
+                        <div class="row">
+                            <div class="dropdown col-5">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                  </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <button class="dropdown-item" type="button">Action</button>
+                                    <button class="dropdown-item" type="button">Another action</button>
+                                    <button class="dropdown-item" type="button">Something else here</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="redemptionoption">Expiration Date OR Days Till Expiration?</label>
+                        <div class="row">
+                            <input type="number" class="form-control col-4 ml-2" id="couponname1" aria-describedby="couponName" placeholder="name-year-num">
+                            <span class="col-1">@</span>
+                            <div class="dropdown col-2">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <button class="dropdown-item" type="button">Action</button>
+                                    <button class="dropdown-item" type="button">Another action</button>
+                                    <button class="dropdown-item" type="button">Something else here</button>
+                                </div>
+                            </div>
+                            <div class="dropdown col-2">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <button class="dropdown-item" type="button">Action</button>
+                                    <button class="dropdown-item" type="button">Another action</button>
+                                    <button class="dropdown-item" type="button">Something else here</button>
+                                </div>
+                            </div>
+                            <div class="dropdown col-2">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <button class="dropdown-item" type="button">Action</button>
+                                    <button class="dropdown-item" type="button">Another action</button>
+                                    <button class="dropdown-item" type="button">Something else here</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="redemptionoption">Allow Users to Vote?</label>
+                        <div class="row">
+                            <div class="dropdown col-4">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Dropdown
+    </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <button class="dropdown-item" type="button">Action</button>
+                                    <button class="dropdown-item" type="button">Another action</button>
+                                    <button class="dropdown-item" type="button">Something else here</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="redemptionoption">Coupon Colorway</label>
+                        <input type="text" class="form-control col-4" id="couponname1" aria-describedby="couponName" placeholder="name-year-num">
+                    </div>
+                </div>
+                <!-- <div class="row">
+                  <div class="form-group col">
+                    <label for="redemptionoption">Expiration Date OR Days Till Expiration?</label>
+                        <div class="row">
+                        </div>
+                  </div>
+                </div> -->
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-success"
+        [disabled]="!myForm.valid">
+        Submit Form
+      </button>
+    </div>
+    
+  </form>
+  
