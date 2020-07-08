@@ -11,7 +11,7 @@ import { User } from '../models/User'
 export class AuthenticationService {
   private responseSubject: BehaviorSubject<Response>;
   public response: Observable<Response>;
-  private url = "http://localhost:4000/api/signin";
+  private url = "https://dashboard-node-backend.herokuapp.com/api/signin";
   userLoggedIn: boolean = false;
   constructor(private http: HttpClient) {
    this.responseSubject = new BehaviorSubject<any>(null);
@@ -43,6 +43,7 @@ export class AuthenticationService {
   }
 
   loggedIn(bool){
+    console.log("auth loggedin "+bool)
     this.userLoggedIn = bool;
   }
   login(loginData) {

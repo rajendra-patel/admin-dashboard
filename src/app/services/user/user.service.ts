@@ -7,7 +7,7 @@ import { map, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class UserService {
-  private url = "http://localhost:4000/api/users";
+  private url = "https://dashboard-node-backend.herokuapp.com/api/users";
 
   constructor(private http: HttpClient) { }
 
@@ -18,7 +18,7 @@ export class UserService {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
     });
-    return this.http.post("http://localhost:4000/api/register-user", jsonLoginData, { headers: getHeaders })
+    return this.http.post("https://dashboard-node-backend.herokuapp.com/api/register-user", jsonLoginData, { headers: getHeaders })
       .pipe(catchError(this.errorHandler));
   }
   getAllUsers(){
@@ -28,7 +28,7 @@ export class UserService {
       'Accept': 'application/json',
       'Authorization': 'Bearer ' + token
     });
-    return this.http.get("http://localhost:4000/api/users", { headers: getHeaders })
+    return this.http.get("https://dashboard-node-backend.herokuapp.com/api/users", { headers: getHeaders })
       .pipe(catchError(this.errorHandler));
   }
 
@@ -46,12 +46,12 @@ export class UserService {
       'Accept': 'application/json',
       'Authorization': 'Bearer ' + token
     });
-    return this.http.put("http://localhost:4000/api/update/user", { headers: getHeaders, params: params })
+    return this.http.put("https://dashboard-node-backend.herokuapp.com/api/update/user", { headers: getHeaders, params: params })
       .pipe(catchError(this.errorHandler));
   }
 
   deleteUser(user){
-    let url = "http://localhost:4000/api/delete/user";
+    let url = "https://dashboard-node-backend.herokuapp.com/api/delete/user";
     let token = localStorage.getItem("token");
     // let jsonCompanyData = JSON.stringify(companyData);
     const params: HttpParams = new HttpParams().set('id', user._id);

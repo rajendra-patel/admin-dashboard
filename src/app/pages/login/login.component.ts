@@ -23,19 +23,28 @@ export class LoginComponent implements OnInit {
     let loginData = { "email": this.username, "password": this.password };
     this.authService.login(loginData).subscribe(
       (res) => {
-          console.log(res);     
+          console.log(res);
           localStorage.setItem("token", res['token']);
+          if(res['token']) {
+            this.authService.loggedIn(true);
+            this.isValidUser=true;
+            this.router.navigate(['/dashboard']);
+          } else {
+            this.authService.loggedIn(false);
+            this.isValidUser=false;
+          }
       },
       (err) => {
         console.log(err);
       //handle your error here
       });
-    if(localStorage.getItem("token")) {
-      this.authService.loggedIn(true);
-    } else {
-      this.authService.loggedIn(false);
-    }
+    // if(localStorage.getItem("token")) {
+
+    // } else {
+
+    // }
     // this.authService.isLoggedIn();
+/*
     if(this.authService.isLoggedIn()){
       this.isValidUser=true;
       console.log("login success");
@@ -43,6 +52,7 @@ export class LoginComponent implements OnInit {
     } else {
       this.isValidUser=false;
     }
+    */
   }
 
 

@@ -8,7 +8,7 @@ import { map, catchError } from 'rxjs/operators';
 })
 export class CompanyService {
 
-  private url = "http://localhost:4000/api/company";
+  private url = "https://dashboard-node-backend.herokuapp.com/api/company";
 
   constructor(private http: HttpClient) { }
 
@@ -21,7 +21,7 @@ export class CompanyService {
       'Accept': 'application/json',
       'Authorization': 'Bearer ' + token
     });
-    return this.http.post("http://localhost:4000/api/register-company", jsonCompanyData, { headers: getHeaders })
+    return this.http.post("https://dashboard-node-backend.herokuapp.com/api/register-company", jsonCompanyData, { headers: getHeaders })
       .pipe(catchError(this.errorHandler));
   }
 
@@ -34,7 +34,7 @@ export class CompanyService {
       'Accept': 'application/json',
       'Authorization': 'Bearer ' + token
     });
-    return this.http.get("http://localhost:4000/api/companies", { headers: getHeaders })
+    return this.http.get("https://dashboard-node-backend.herokuapp.com/api/companies", { headers: getHeaders })
       .pipe(catchError(this.errorHandler));
   }
 
@@ -49,7 +49,7 @@ export class CompanyService {
       'Accept': 'application/json',
       'Authorization': 'Bearer ' + token
     });
-    return this.http.put("http://localhost:4000/api/update/company", { headers: getHeaders, params: params })
+    return this.http.put("https://dashboard-node-backend.herokuapp.com/api/update/company", { headers: getHeaders, params: params })
       .pipe(catchError(this.errorHandler));
   }
 
@@ -64,7 +64,7 @@ export class CompanyService {
       'Accept': 'application/json',
       'Authorization': 'Bearer ' + token
     });
-    return this.http.delete("http://localhost:4000/api/delete/company", { headers: getHeaders, params: params })
+    return this.http.delete("https://dashboard-node-backend.herokuapp.com/api/delete/company", { headers: getHeaders, params: params })
       .pipe(catchError(this.errorHandler));
   }
 

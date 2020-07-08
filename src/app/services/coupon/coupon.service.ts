@@ -8,7 +8,7 @@ import { map, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CouponService {
-  private url = "http://localhost:4000/api/company";
+  private url = "https://dashboard-node-backend.herokuapp.com/api/company";
 
   constructor(private http: HttpClient) { }
 
@@ -21,7 +21,7 @@ export class CouponService {
       'Accept': 'application/json',
       'Authorization': 'Bearer ' + token
     });
-    return this.http.post("http://localhost:4000/api/create-coupon", jsonCouponData, { headers: getHeaders })
+    return this.http.post("https://dashboard-node-backend.herokuapp.com/api/create-coupon", jsonCouponData, { headers: getHeaders })
       .pipe(catchError(this.errorHandler));
   }
 
@@ -32,7 +32,7 @@ export class CouponService {
       'Accept': 'application/json',
       'Authorization': 'Bearer ' + token
     });
-    return this.http.get("http://localhost:4000/api/coupons", { headers: getHeaders })
+    return this.http.get("https://dashboard-node-backend.herokuapp.com/api/coupons", { headers: getHeaders })
       .pipe(catchError(this.errorHandler));
   }
 
@@ -45,7 +45,7 @@ export class CouponService {
       'Accept': 'application/json',
       'Authorization': 'Bearer ' + token
     });
-    return this.http.put("http://localhost:4000/api/update/coupon", { headers: getHeaders, params: params })
+    return this.http.put("https://dashboard-node-backend.herokuapp.com/api/update/coupon", { headers: getHeaders, params: params })
       .pipe(catchError(this.errorHandler));
   }
 
@@ -58,7 +58,7 @@ export class CouponService {
       'Accept': 'application/json',
       'Authorization': 'Bearer ' + token
     });
-    return this.http.delete("http://localhost:4000/api/delete/coupon", { headers: getHeaders, params: params })
+    return this.http.delete("https://dashboard-node-backend.herokuapp.com/api/delete/coupon", { headers: getHeaders, params: params })
       .pipe(catchError(this.errorHandler));
   }
 
